@@ -1,0 +1,18 @@
+pipeline{
+  agent any
+
+  stages{
+      stage("download"){
+          steps{
+              git 'https://github.com/vinayramireddy/myweb.git'
+          }
+      }
+
+      stage("Maven Build"){
+          steps{
+              sh "mvn clean package"
+              sh "mv target/*.war target/myweb.war"
+          }
+      }
+      }
+      }
