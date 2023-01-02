@@ -2,10 +2,9 @@
 
 pipeline{
     agent any
-    
-   tools {
-	  maven 'maventest'
-	}
+    environment{
+        PATH = "/opt/apmaven/bin:$PATH"
+    }
     stages{
         stage("download"){
             steps{
